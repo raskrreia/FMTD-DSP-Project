@@ -1,4 +1,4 @@
-# Facemask-Type-Detection
+# FACEMASK TYPE DETECTION
 Project by Normina Abo and Mia Abbygale Flores
 
 ## How to Use
