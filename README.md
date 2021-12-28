@@ -35,5 +35,6 @@ N/A
 
 #### The Facemask Type Detector Project is now ready for use.
 
-
-
+```
+To close the project press 'Q'
+```
