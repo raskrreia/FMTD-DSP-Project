@@ -1,3 +1,36 @@
 # Facemask-Type-Detection
 Project by Normina Abo and Mia Abbygale Flores
 
+## How to Use
+
+To use the project, follow these steps:
+
+1-A.Clone the repository by opening your Command Prompt. Type the following:
+
+```
+git clone https://github.com/miaabbygaleflores/FMTD-DSP-Project.git
+```
+1-B. Another method is to open GitHub Desktop
+
+```
+As you open your GitHub Desktop, press Ctrl+Shift+O then click the URL tab. Finally, paste "https://github.com/miaabbygaleflores/FMTD-DSP-Project.git"
+```
+
+2. Download the required libraries: 
+
+```
+openCV
+keras
+Tensorflow
+```
+
+3. Run the project by typing the following command on your Command Prompt:
+
+```
+N/A
+```
+
+#### The Facemask Tpe Detector Project is now ready for use.
+
+
+
