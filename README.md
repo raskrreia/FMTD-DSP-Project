@@ -5,7 +5,7 @@ Project by Normina Abo and Mia Abbygale Flores
 
 To use the project, follow these steps:
 
-1-A.Clone the repository by opening your Command Prompt. Type the following:
+1-A. Clone the repository by opening your Command Prompt. Type the following:
 
 ```
 git clone https://github.com/miaabbygaleflores/FMTD-DSP-Project.git
@@ -13,7 +13,8 @@ git clone https://github.com/miaabbygaleflores/FMTD-DSP-Project.git
 1-B. Another method is to open GitHub Desktop
 
 ```
-As you open your GitHub Desktop, press Ctrl+Shift+O then click the URL tab. Finally, paste "https://github.com/miaabbygaleflores/FMTD-DSP-Project.git"
+As you open your GitHub Desktop, press Ctrl+Shift+O then click the URL tab.
+Finally, paste "https://github.com/miaabbygaleflores/FMTD-DSP-Project.git"
 ```
 
 2. Download the required libraries: 
@@ -30,7 +31,7 @@ Tensorflow
 N/A
 ```
 
-#### The Facemask Tpe Detector Project is now ready for use.
+#### The Facemask Type Detector Project is now ready for use.
 
 
 
