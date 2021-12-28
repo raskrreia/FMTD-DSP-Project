@@ -12,7 +12,7 @@ git clone https://github.com/miaabbygaleflores/FMTD-DSP-Project.git
 ```
 1-B. Another method is to open GitHub Desktop:
 
-     As you open your GitHub Desktop, press 'Ctrl+Shift+O' then click the URL tab.
+     As you open your GitHub Desktop, press 'Ctrl+Shift+O' then click the 'URL' tab.
      Copy and paste the link of the repository
      Finally, click the 'Clone' button
 ```
