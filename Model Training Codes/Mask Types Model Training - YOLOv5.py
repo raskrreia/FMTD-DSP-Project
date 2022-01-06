@@ -239,16 +239,10 @@ for imageName in glob.glob('/content/yolov5/runs/detect/exp/*.jpg'): #assuming J
 
 Now that you have trained your custom detector, you can export the trained weights you have made here for inference on your device elsewhere
 """
-
+#Para ma connect ang training files to your Google Drive
 from google.colab import drive
 drive.mount('/content/gdrive')
 
 # Commented out IPython magic to ensure Python compatibility.
 # %cp /content/yolov5/runs/train/yolov5s_results/weights/best.pt /content/gdrive/My\ Drive
 
-"""## Congrats!
-
-Hope you enjoyed this!
-
---Team [Roboflow](https://roboflow.ai)
-"""
