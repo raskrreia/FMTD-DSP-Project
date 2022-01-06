@@ -10,6 +10,9 @@ Para sa compiling purposes only
 Piliin ang GPU in Runtime 
 Go to Runtime--> Change Runtime Type --> Hardware accelerator --> GPU
 
+This Algorithm was created by Glenn Jocher.
+Some parts of the codes were edited to fit our DSP Project.
+
 """
 
 # Commented out IPython magic to ensure Python compatibility.
