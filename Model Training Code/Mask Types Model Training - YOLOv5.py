@@ -1,13 +1,15 @@
 # -*- coding: utf-8 -*-
-"""Mia Abbygale Flores - Train-YOLOv5
+"""
+Mia Flo - Train-YOLOv5
 
-#Install Dependencies
-#DataSets must be from Roboflow
-#This is Google Colab Format, hindi po recommended sa Python IDE
-#Para sa compiling purposes only
+Install Dependencies
+DataSets must be from Roboflow
+This is Google Colab Format, hindi po recommended sa Python IDE
+Para sa compiling purposes only
 
-#Piliin ang GPU in Runtime 
-#Go to Runtime--> Change Runtime Type --> Hardware accelerator --> GPU
+Piliin ang GPU in Runtime 
+Go to Runtime--> Change Runtime Type --> Hardware accelerator --> GPU
+
 """
 
 # Commented out IPython magic to ensure Python compatibility.
@@ -39,11 +41,7 @@ project = rf.workspace().project("DataSet Title")
 dataset = project.version(1).download("yolov5")
 
 
-"""# Define Model Configuration and Architecture
-
-We will write a yaml script that defines the parameters for our model like the number of classes, anchors, and each layer.
-
-You do not need to edit these cells, but you may.
+"""Define Model Configuration and Architecture
 """
 
 # define number of classes based on YAML
@@ -81,13 +79,13 @@ Here, we are able to pass a number of arguments:
 # %cd /content/yolov5/
 # !python train.py --img 416 --batch 16 --epochs 100 --data {dataset.location}/data.yaml --cfg ./models/custom_yolov5s.yaml --weights '' --name yolov5s_results  --cache
 
-"""# Evaluate Custom YOLOv5 Detector Performance
-
-Training losses and performance metrics are saved to Tensorboard and also to a logfile defined above with the **--name** flag when we train.
-In our case, we named this `yolov5s_results`. (If given no name, it defaults to `results.txt`.) The results file is plotted as a png after training completes.
-
-Note: Partially completed `results.txt` files can be plotted with `from utils.utils import plot_results; plot_results()`.
 """
+# Evaluate Custom YOLOv5 Detector Performance
+
+#Training losses and performance metrics are saved to Tensorboard and also to a logfile defined above with the **--name** flag when we train.
+#In our case, we named this `yolov5s_results`. (If given no name, it defaults to `results.txt`.) The results file is plotted as a png after training completes.
+
+#Note: Partially completed `results.txt` files can be plotted with `from utils.utils import plot_results; plot_results()`.
 
 from google.colab import drive
 drive.mount('/content/drive')
@@ -99,14 +97,15 @@ img = cv2.imread(filename='/content/yolov5/runs/train/yolov5s_results/results.pn
 cv2_imshow(img)
 cv2.waitKey(0)
 
-"""### Curious? Visualize Our Training Data with Labels
+
+### Visualize Our Training Data with Labels
 
 After training starts, view `train*.jpg` images to see training images, labels and augmentation effects.
 
 Note a mosaic dataloader is used for training (shown below), a new dataloading concept developed by Glenn Jocher and first featured in [YOLOv4](https://arxiv.org/abs/2004.10934).
-"""
 
-# first, display our ground truth data
+
+# display our ground truth data
 print("GROUND TRUTH TRAINING DATA:")
 import cv2
 from google.colab.patches import cv2_imshow
@@ -124,22 +123,10 @@ img3 = cv2.imread(filename='/content/yolov5/runs/train/yolov5s_results/train_bat
 cv2_imshow(img3)
 cv2.waitKey(0)
 
-"""#Run Inference  With Trained Weights
-Run inference with a pretrained checkpoint on contents of `test/images` folder downloaded from Roboflow.
-"""
 
-# Commented out IPython magic to ensure Python compatibility.
-# trained weights are saved by default in our weights folder
-# %ls runs/
+#Run Inference  With Trained Weights
+#Run inference with a pretrained checkpoint on contents of `test/images` folder downloaded from Roboflow.
 
-# Commented out IPython magic to ensure Python compatibility.
-# %ls runs/train/yolov5s_results/weights
-
-# Commented out IPython magic to ensure Python compatibility.
-# when we ran this, we saw .007 second inference time. That is 140 FPS on a TESLA P100!
-# use the best weights!
-# %cd /content/yolov5/
-!python detect.py --weights runs/train/yolov5s_results/weights/best.pt --img 416 --conf 0.4 --source ../test/images
 
 #display inference on ALL test images
 #this looks much better with longer training above
@@ -152,11 +139,10 @@ for imageName in glob.glob('/content/yolov5/runs/detect/exp/*.jpg'): #assuming J
     print("\n")
 
 #   Weights Export
+
 #Para ma connect ang training files to your Google Drive
 
 from google.colab import drive
 drive.mount('/content/gdrive')
 
-# Commented out IPython magic to ensure Python compatibility.
-# %cp /content/yolov5/runs/train/yolov5s_results/weights/best.pt /content/gdrive/My\ Drive
 
