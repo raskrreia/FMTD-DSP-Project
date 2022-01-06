@@ -1,6 +1,9 @@
 # -*- coding: utf-8 -*-
 """
-Mia Flo - Train-YOLOv5
+FACE MASK TYPES MODEL TRAINING
+using YOLOv5 Algorithm
+
+Classes: No Mask, Fabric/Cloth Mask, Surgical Mask & FFP Mask
 
 Install Dependencies
 DataSets must be from Roboflow
