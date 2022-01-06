@@ -4,7 +4,10 @@ Mia Flo - Train-YOLOv5
 
 Install Dependencies
 DataSets must be from Roboflow
+
+**********************IMPORTANT**********************************
 This is Google Colab Format, hindi po recommended sa Python IDE
+*****************************************************************
 Para sa compiling purposes only
 
 Piliin ang GPU in Runtime 
