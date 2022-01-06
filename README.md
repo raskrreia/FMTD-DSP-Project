@@ -1,6 +1,7 @@
 # FACEMASK TYPE DETECTION
+```
 Project by Normina Abo and Mia Abbygale Flores
-
+```
 ## User Guide
 
 To use the project, follow these steps:
