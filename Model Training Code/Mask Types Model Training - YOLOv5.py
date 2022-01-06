@@ -6,7 +6,8 @@
 #This is Google Colab Format, hindi po recommended sa Python IDE
 #Para sa compiling purposes only
 
-_(Remember to choose GPU in Runtime if not already selected. Runtime --> Change Runtime Type --> Hardware accelerator --> GPU)_
+#Piliin ang GPU in Runtime 
+#Go to Runtime--> Change Runtime Type --> Hardware accelerator --> GPU
 """
 
 # Commented out IPython magic to ensure Python compatibility.
@@ -25,15 +26,7 @@ from utils.google_utils import gdrive_download  # to download models/datasets
 # clear_output()
 print('Setup complete. Using torch %s %s' % (torch.__version__, torch.cuda.get_device_properties(0) if torch.cuda.is_available() else 'CPU'))
 
-"""# Download Correctly Formatted Custom Dataset 
-
-We'll download our dataset from Roboflow. Use the "**YOLOv5 PyTorch**" export format. Note that the Ultralytics implementation calls for a YAML file defining where your training and test data is. The Roboflow export also writes this format for us.
-
-To get your data into Roboflow, follow the [Getting Started Guide](https://blog.roboflow.ai/getting-started-with-roboflow/).
-
-![YOLOv5 PyTorch export](https://i.imgur.com/5vr9G2u.png)
-"""
-
+#INSTALL ROBOFLOW
 !pip install roboflow
 
 from roboflow import Roboflow
@@ -41,21 +34,10 @@ from roboflow import Roboflow
 
 #Replace lang po ang *your code*
 rf = Roboflow(api_key="your code")
+#Replace DataSet Title
+project = rf.workspace().project("DataSet Title")
+dataset = project.version(1).download("yolov5")
 
-project = rf.workspace().project("additional-eop8w")
-dataset = project.version(2).download("yolov5")
-
-# Commented out IPython magic to ensure Python compatibility.
-# %cd /content/yolov5
-#after following the link above, recieve python code with these fields filled in
-#from roboflow import Roboflow
-#rf = Roboflow(api_key="YOUR API KEY HERE")
-#project = rf.workspace().project("YOUR PROJECT")
-#dataset = project.version("YOUR VERSION").download("yolov5")
-
-# Commented out IPython magic to ensure Python compatibility.
-# this is the YAML file Roboflow wrote for us that we're loading into this notebook with our data
-# %cat {dataset.location}/data.yaml
 
 """# Define Model Configuration and Architecture
 
@@ -69,10 +51,6 @@ import yaml
 with open(dataset.location + "/data.yaml", 'r') as stream:
     num_classes = str(yaml.safe_load(stream)['nc'])
 
-# Commented out IPython magic to ensure Python compatibility.
-#this is the model configuration we will use for our tutorial 
-# %cat /content/yolov5/models/yolov5s.yaml
-
 #customize iPython writefile so we can write variables
 from IPython.core.magic import register_line_cell_magic
 
@@ -81,61 +59,7 @@ def writetemplate(line, cell):
     with open(line, 'w') as f:
         f.write(cell.format(**globals()))
 
-# Commented out IPython magic to ensure Python compatibility.
-# %%writetemplate /content/yolov5/models/custom_yolov5s.yaml
-# 
-# # parameters
-# nc: {num_classes}  # number of classes
-# depth_multiple: 0.33  # model depth multiple
-# width_multiple: 0.50  # layer channel multiple
-# 
-# # anchors
-# anchors:
-#   - [10,13, 16,30, 33,23]  # P3/8
-#   - [30,61, 62,45, 59,119]  # P4/16
-#   - [116,90, 156,198, 373,326]  # P5/32
-# 
-# # YOLOv5 backbone
-# backbone:
-#   # [from, number, module, args]
-#   [[-1, 1, Focus, [64, 3]],  # 0-P1/2
-#    [-1, 1, Conv, [128, 3, 2]],  # 1-P2/4
-#    [-1, 3, BottleneckCSP, [128]],
-#    [-1, 1, Conv, [256, 3, 2]],  # 3-P3/8
-#    [-1, 9, BottleneckCSP, [256]],
-#    [-1, 1, Conv, [512, 3, 2]],  # 5-P4/16
-#    [-1, 9, BottleneckCSP, [512]],
-#    [-1, 1, Conv, [1024, 3, 2]],  # 7-P5/32
-#    [-1, 1, SPP, [1024, [5, 9, 13]]],
-#    [-1, 3, BottleneckCSP, [1024, False]],  # 9
-#   ]
-# 
-# # YOLOv5 head
-# head:
-#   [[-1, 1, Conv, [512, 1, 1]],
-#    [-1, 1, nn.Upsample, [None, 2, 'nearest']],
-#    [[-1, 6], 1, Concat, [1]],  # cat backbone P4
-#    [-1, 3, BottleneckCSP, [512, False]],  # 13
-# 
-#    [-1, 1, Conv, [256, 1, 1]],
-#    [-1, 1, nn.Upsample, [None, 2, 'nearest']],
-#    [[-1, 4], 1, Concat, [1]],  # cat backbone P3
-#    [-1, 3, BottleneckCSP, [256, False]],  # 17 (P3/8-small)
-# 
-#    [-1, 1, Conv, [256, 3, 2]],
-#    [[-1, 14], 1, Concat, [1]],  # cat head P4
-#    [-1, 3, BottleneckCSP, [512, False]],  # 20 (P4/16-medium)
-# 
-#    [-1, 1, Conv, [512, 3, 2]],
-#    [[-1, 10], 1, Concat, [1]],  # cat head P5
-#    [-1, 3, BottleneckCSP, [1024, False]],  # 23 (P5/32-large)
-# 
-#    [[17, 20, 23], 1, Detect, [nc, anchors]],  # Detect(P3, P4, P5)
-#   ]
-
-"""# Train Custom YOLOv5 Detector
-
-### Next, we'll fire off training!
+### MODEL TRAINING
 
 
 Here, we are able to pass a number of arguments:
@@ -159,23 +83,15 @@ Here, we are able to pass a number of arguments:
 
 """# Evaluate Custom YOLOv5 Detector Performance
 
-Training losses and performance metrics are saved to Tensorboard and also to a logfile defined above with the **--name** flag when we train. In our case, we named this `yolov5s_results`. (If given no name, it defaults to `results.txt`.) The results file is plotted as a png after training completes.
+Training losses and performance metrics are saved to Tensorboard and also to a logfile defined above with the **--name** flag when we train.
+In our case, we named this `yolov5s_results`. (If given no name, it defaults to `results.txt`.) The results file is plotted as a png after training completes.
 
-Note from Glenn: Partially completed `results.txt` files can be plotted with `from utils.utils import plot_results; plot_results()`.
+Note: Partially completed `results.txt` files can be plotted with `from utils.utils import plot_results; plot_results()`.
 """
-
-# Commented out IPython magic to ensure Python compatibility.
-# Start tensorboard
-# Launch after you have started training
-# logs save in the folder "runs"
-# %load_ext tensorboard
-# %tensorboard --logdir runs
 
 from google.colab import drive
 drive.mount('/content/drive')
 
-# we can also output some older school graphs if the tensor board isn't working for whatever reason... 
-import cv2
 from utils.plots import plot_results  # plot results.txt as results.png
 from google.colab.patches import cv2_imshow
 
@@ -235,11 +151,9 @@ for imageName in glob.glob('/content/yolov5/runs/detect/exp/*.jpg'): #assuming J
     display(Image(filename=imageName))
     print("\n")
 
-"""# Export Trained Weights for Future Inference
-
-Now that you have trained your custom detector, you can export the trained weights you have made here for inference on your device elsewhere
-"""
+#   Weights Export
 #Para ma connect ang training files to your Google Drive
+
 from google.colab import drive
 drive.mount('/content/gdrive')
 
