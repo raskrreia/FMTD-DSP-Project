@@ -1,15 +1,15 @@
 
-FMT - v1 Mask-V1
+Additional - v3 Dtected
 ==============================
 
-This dataset was exported via roboflow.ai on January 5, 2022 at 7:05 AM GMT
+This dataset was exported via roboflow.ai on January 9, 2022 at 7:22 AM GMT
 
-It includes 1426 images.
-Mask are annotated in YOLO v5 PyTorch format.
+It includes 2022 images.
+Additional-Mask are annotated in YOLO v3 Darknet format.
 
 The following pre-processing was applied to each image:
 * Resize to 416x416 (Fit (black edges))
 
-No image augmentation techniques were applied.
+The following augmentation was applied to create 3 versions of each source image:
 
 

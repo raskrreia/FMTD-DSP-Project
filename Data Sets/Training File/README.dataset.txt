@@ -1,4 +1,4 @@
-# undefined > Mask-V1
+# undefined > Dtected
 https://public.roboflow.ai/object-detection/undefined
 
 Provided by undefined
