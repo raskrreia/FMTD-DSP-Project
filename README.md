@@ -24,8 +24,7 @@ git clone https://github.com/miaabbygaleflores/FMTD-DSP-Project.git
 
 ```
 openCV
-keras
-Tensorflow
+
 ```
 
 3. Run the project by typing the following command on your Command Prompt:
