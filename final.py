@@ -2,7 +2,6 @@
 """
 Created on Tue Jan 11 17:08:13 2022
 
-@author: rinki
 """
 
 import cv2
