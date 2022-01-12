@@ -19,7 +19,9 @@ COLORS = [(255,0,0),(255,0,255),(0,0,255),(0,255,255)]
 class_name = []
 with open('MaskTypes.names','r') as f:
     class_name = [cname.strip() for cname in f.readlines()]
+    
 print(class_name)
+print("\nFacemask Type Detector (DSP Project)")
 
 #   Load YOLOv4-Tiny Model
 net = cv.dnn.readNet('Mask.weights','Mask.cfg')
@@ -55,8 +57,8 @@ while True:
             label = "%s : %f" % ('No Mask Detected', score)
         
 #   Bounding Box Design
-        cv.rectangle(frame,box,color,100)
-        cv.putText(frame, label, (box[0], box[1]-10), cv.FONT_HERSHEY_SIMPLEX, 0.5,color, 1)
+        cv.rectangle(frame,box,color,1)
+        cv.putText(frame, label, (box[0], box[1]-10), cv.FONT_HERSHEY_SIMPLEX, 0.5,color, 2)
    
     cv.imshow('Facemask Type Detection (DSP Project)',frame)
     key = cv.waitKey(1)
@@ -64,6 +66,8 @@ while True:
 #   To exit our project, Press 'Q' sa keyboard.
     if key == ord('q'):
         break
+    
+print("Facemask Type Detector Closed")
 
 cap.release()
 cv.destroyAllWindows()
