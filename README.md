@@ -23,7 +23,7 @@ git clone https://github.com/miaabbygaleflores/FMTD-DSP-Project.git
 2. Download the required libraries: 
 
 ```
-openCV
+pip install opencv-contrib-python==4.5.3.56
 
 ```
 
