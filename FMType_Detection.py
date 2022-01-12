@@ -1,5 +1,5 @@
 import cv2 as cv
-import numpy
+#import numpy
 
 Conf_threshold = 0.7
 NMS_threshold = 0.7
