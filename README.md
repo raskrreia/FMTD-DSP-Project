@@ -20,9 +20,6 @@ git clone https://github.com/miaabbygaleflores/FMTD-DSP-Project.git
 ```
  https://github.com/miaabbygaleflores/FMTD-DSP-Project.git
 ```
-     
-   Then, click the 'Clone' button.
-
 
 2. Download the required libraries: 
 
