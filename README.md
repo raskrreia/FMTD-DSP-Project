@@ -20,17 +20,17 @@ git clone https://github.com/miaabbygaleflores/FMTD-DSP-Project.git
 ```
      Finally, click the 'Clone' button
 
-2. Change the directory to where the cloned repository is
+2. Download the required libraries: 
+
+```
+pip install opencv-contrib-python==4.5.3.56
+```
+
+3. Change the directory to where the cloned repository is
    located in your local machine. Then type:
 
 ```
 cd FMTD-DSP-Project
-```
-
-3. Download the required libraries: 
-
-```
-pip install opencv-contrib-python==4.5.3.56
 ```
 
 4. Run the project by typing the following command on your Command Prompt:
