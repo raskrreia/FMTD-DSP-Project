@@ -20,17 +20,25 @@ git clone https://github.com/miaabbygaleflores/FMTD-DSP-Project.git
 ```
      Finally, click the 'Clone' button
 
-2. Download the required libraries: 
+2. Change the directory to where the cloned repository is
+   located in your local machine. Then type:
+
+```
+cd Facemask-Type-Detection
+
+```
+
+3. Download the required libraries: 
 
 ```
 pip install opencv-contrib-python==4.5.3.56
 
 ```
 
-3. Run the project by typing the following command on your Command Prompt:
+4. Run the project by typing the following command on your Command Prompt:
 
 ```
-N/A
+python FMType_Detection.py
 ```
 
 #### The Facemask Type Detector Project is now ready for use.
