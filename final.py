@@ -19,7 +19,7 @@ with open("obj.names","r") as f:
 cap = cv2.VideoCapture(0)
 
 #   Load Model
-net = cv2.dnnreadNet("Mask.weights","Mask.cfg")
+net = cv2.dnn.readNet("Mask.weights","Mask.cfg")
 
 #   Detect Model
 model = cv2.dnn_DetectionModel(net)
