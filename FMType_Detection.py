@@ -1,4 +1,3 @@
-
 import cv2 as cv
 import numpy
 
@@ -8,7 +7,7 @@ NMS_threshold = 0.7
 COLORS = [(0,255,0),(255,255,0),(0,255,0),(255,0,0)]
 
 class_name = []
-with open('obj.names','r') as f:
+with open('MaskTypes.names','r') as f:
     class_name = [cname.strip() for cname in f.readlines()]
 print(class_name)
 
