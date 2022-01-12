@@ -30,6 +30,7 @@ net.setPreferableTarget(cv.dnn.DNN_TARGET_CUDA_FP16)
 
 #   Detect Model
 model = cv.dnn_DetectionModel(net)
+#   Set Parameters
 model.setInputParams(size=(416,416), scale = 1/255, swapRB=True)
 
 #   Source Feed: Webcam
