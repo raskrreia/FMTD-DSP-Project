@@ -54,9 +54,9 @@ while True:
             color = 0,0,255
             label = "%s : %f" % ('No Mask Detected', score)
         
-#   Bounding Box
-        cv.rectangle(frame,box,color,1)
-        cv.putText(frame,label, (box[0], box[1]-10), cv.FONT_HERSHEY_COMPLEX, 0.5,color, 2)
+#   Bounding Box Design
+        cv.rectangle(frame,box,color,100)
+        cv.putText(frame, label, (box[0], box[1]-10), cv.FONT_HERSHEY_SIMPLEX, 0.5,color, 1)
    
     cv.imshow('Facemask Type Detection (DSP Project)',frame)
     key = cv.waitKey(1)
