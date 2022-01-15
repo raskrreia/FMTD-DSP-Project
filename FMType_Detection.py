@@ -59,7 +59,8 @@ while True:
         
 #   Bounding Box Design
         cv.rectangle(frame,box,color,1)
-        cv.putText(frame, label, (box[0], box[1]-10), cv.FONT_HERSHEY_SIMPLEX, 0.5,color, 2)
+        cv.putText(frame, label, (box[0], box[1]-10), 
+                   cv.FONT_HERSHEY_SIMPLEX, 0.5,color, 2)
    
     cv.imshow('Facemask Type Detection (DSP Project)',frame)
     key = cv.waitKey(1)
