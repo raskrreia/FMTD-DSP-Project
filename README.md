@@ -1,3 +1,15 @@
+<p align="center">
+<h1>Simple Face Mask Detection Using Deep Learning😷</h1>
+<br/>
+<p align="center">
+<a href=""><img alt="Contributions Welcome" src="https://img.shields.io/badge/contributions-welcome-brightgreen?style=for-the-badge&labelColor=black&logo=github"></a><img alt="GitHub" src="https://img.shields.io/github/license/soumya997/Face-Mask-Detection-Using-Deep-Learning?style=for-the-badge"><br/>
+
+</p>
+<p align="center">
+
+ <img src="https://forthebadge.com/images/badges/built-with-love.svg"> <img src="https://forthebadge.com/images/badges/made-with-python.svg"> <img src="https://forthebadge.com/images/badges/open-source.svg"> <img src="https://forthebadge.com/images/badges/made-with-reason.svg">
+
+
 # FACEMASK TYPE DETECTION
 ```
 Project by Normina Abo and Mia Abbygale Flores
